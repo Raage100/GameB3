@@ -1,4 +1,5 @@
-﻿using Game.Application.Games.Commands.CreateGame;
+﻿using ErrorOr;
+using Game.Application.Games.Commands.CreateGame;
 using Game.Contracts.Games.Request;
 using MapsterMapper;
 using MediatR;
@@ -21,13 +22,19 @@ namespace Game.Api.Controllers
         }
 
         [HttpPost]
-
+        [Route(nameof(CreateGame))]
         public async Task<IActionResult> CreateGame(CreateGameRequest request)
         {
             var command = _mapper.Map<CreateGameCommand>(request);
-            var result = await _mediator.Send(command);
-    
-                                                         );
+          
+
+            ErrorOr<CreateGameResult> Result = await _mediator.Send(command);
+
+            return Result.Match(Result => Ok(Result), Error => Problem(Error));
+
+
         }
+
+
     }
 }

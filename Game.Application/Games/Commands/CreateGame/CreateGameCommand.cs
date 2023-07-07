@@ -11,5 +11,10 @@ namespace Game.Application.Games.Commands.CreateGame
     public class CreateGameCommand : IRequest<ErrorOr<CreateGameResult>>
     {
         public string Name { get; set; }
+
+        public CreateGameCommand(string name)
+        {
+            Name = name;
+        }
     }
 }

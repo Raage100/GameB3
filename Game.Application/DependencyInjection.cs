@@ -1,4 +1,5 @@
-﻿using FluentValidation;
+﻿
+using FluentValidation;
 using Game.Application.Common.Behaviors;
 using Microsoft.Extensions.DependencyInjection;
 using System.Reflection;

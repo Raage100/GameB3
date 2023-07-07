@@ -4,19 +4,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Game.Application.Games.Commands.CreateGame
+namespace Game.Contracts.Games.Response
 {
-    public class CreateGameResult
+    public class CreateGameResponse
     {
         public int Id { get; set; }
 
-
-
-        public CreateGameResult(int id)
+        public CreateGameResponse(int id)
         {
             Id = id;
-        }  
-
-   
+        }
     }
 }

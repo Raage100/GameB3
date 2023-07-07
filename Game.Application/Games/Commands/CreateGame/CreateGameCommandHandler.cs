@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace Game.Application.Games.Commands.CreateGame
 {
-    internal class CreateGameCommandHandler : IRequestHandler<CreateGameCommand, ErrorOr<CreateGameResult>>
+    public class CreateGameCommandHandler : IRequestHandler<CreateGameCommand, ErrorOr<CreateGameResult>>
     {
         private readonly IGameDbContext _gameDbContext;
 

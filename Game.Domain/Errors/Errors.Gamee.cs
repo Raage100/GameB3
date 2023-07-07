@@ -15,6 +15,11 @@ namespace Game.Domain.Errors
             {
                 return Error.Failure("Game could not be created");
             }
+
+            public static Error GameDoesNotExist()
+            {
+                return Error.NotFound("Game does not exist");
+            }
         }
     }
 }

@@ -9,5 +9,11 @@ namespace Game.Contracts.Games.Request
     public class CreateGameRequest
     {
         public string Name { get; set; }
+
+        public CreateGameRequest(string name)
+        {
+            Name = name;
+            
+        }
     }
 }

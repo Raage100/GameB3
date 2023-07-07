@@ -19,12 +19,12 @@ namespace Game.Api.Errors
 
 
         public override ProblemDetails CreateProblemDetails(
-       HttpContext httpContext,
-       int? statusCode = null,
-       string? title = null,
-       string? type = null,
-       string? detail = null,
-       string? instance = null)
+         HttpContext httpContext,
+         int? statusCode = null,
+         string? title = null,
+         string? type = null,
+         string? detail = null,
+         string? instance = null)
         {
             statusCode ??= 500;
 

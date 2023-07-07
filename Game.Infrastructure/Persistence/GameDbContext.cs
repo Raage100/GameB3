@@ -12,6 +12,11 @@ namespace Game.Infrastructure.Persistence
 {
     public class GameDbContext : DbContext, IGameDbContext
     {
+
+        public GameDbContext(DbContextOptions<GameDbContext> options) : base(options)
+        {
+            
+        }
         public DbSet<Gamee> Gamees { get ; set ; }
         public DbSet<Player> Players { get ; set ; }
         public DbSet<Score> Scores { get; set; }
