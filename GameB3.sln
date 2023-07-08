@@ -13,7 +13,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Game.Domain", "Game.Domain\
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Game.Contracts", "Game.Contracts\Game.Contracts.csproj", "{376638DE-BC67-43B6-BA02-19D35A09B465}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Game.Webb", "Game.Webb\Game.Webb.csproj", "{C375CB7E-B8CE-4768-A278-786E9BB40CD9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Game.Webb", "Game.Webb\Game.Webb.csproj", "{C375CB7E-B8CE-4768-A278-786E9BB40CD9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

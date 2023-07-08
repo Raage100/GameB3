@@ -8,9 +8,10 @@ namespace Game.Webb.State
     {
         public int GameId { get; set; }
         public string? GameName { get; set; }
-        public List<CreateSportResponse> Sports { get; set; } = new();
-        public List<CreatePlayerResponse> Players { get; set; } = new();
+   
         public List<CreateScoreRequest> ScoresEntires { get; set; } = new();
+        public List<GetSportsReponse> Sports { get; set; } = new();
+        public List<GetPlayersInGameResponse> Players { get ; set ; } = new();
 
         public event Action OnChange;
 
@@ -24,11 +25,13 @@ namespace Game.Webb.State
             OnChange?.Invoke();
         }
 
-        public void PlayerAdded(List<CreatePlayerResponse> players)
+        public void PlayerAdded(List<GetPlayersInGameResponse> players)
         {
             Players = players;
             NotifyStateChanged();
         }
+
+     
 
         public void SetGameId(int id)
         {
@@ -41,10 +44,12 @@ namespace Game.Webb.State
             GameName = name;
         }
 
-        public void SportAdded(List<CreateSportResponse> sports)
+        public void SportAdded(List<GetSportsReponse> sports)
         {
             Sports = sports;
             NotifyStateChanged();
         }
+
+       
     }
 }

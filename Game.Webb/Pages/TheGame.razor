@@ -1,0 +1,108 @@
+﻿@page "/Game"
+
+
+@inherits TheGameBase
+
+
+
+
+<div class="container">
+ 
+@if (ShowAlert)
+    {
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+            <strong>Success!</strong> @Message
+            <button type="button" class="btn-close" @onclick="(() => CloseAlert())"></button>
+        </div>
+    }
+  
+    
+
+    <div class="d-flex flex-row justify-content-evenly pt-5 ">
+        <!-- Left Side: Inputs and Buttons -->
+        <div class="flex-column">
+            <div class="flex-column">
+                <EditForm Model="@CreateSportModel" OnSubmit=@HandleAddingSport>
+                    <ValidationSummary />
+                    <DataAnnotationsValidator />
+                    <InputText class="form-control mb-3" @bind-Value="CreateSportModel.Name" placeholder="Add Sport here!" />
+
+
+                    <button class="btn btn-primary" type="submit">Add Sport</button>
+                </EditForm>
+
+
+            </div>
+            <hr />
+            <div class="flex-column">
+                <EditForm Model="@CreatePlayerModel" OnSubmit="@HandleAddingPlayer">
+                    <ValidationSummary />
+                    <DataAnnotationsValidator />
+                    <InputText class="form-control mb-3" @bind-Value="CreatePlayerModel.Name" placeholder="Add player here!" />
+
+
+                    <button class="btn btn-primary" type="submit">Add player</button>
+                </EditForm>
+
+            </div>
+        </div>
+        <!-- Right Side: Lists -->
+        <div>
+            <div class="d-flex flex-row">
+                <div>
+                    <Sport/>
+                </div>
+                <div>
+                    <Player/>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="d-flex justify-content-center">
+        <button class="btn btn-primary">Start Game</button>
+
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+@*<Validations @ref="validations" Mode="ValidationMode.Auto" Model="@CreateSportModel">
+    <Validation>
+        <Field Horizontal>
+
+            <FieldBody ColumnSize="ColumnSize.Is10">
+                <TextEdit Placeholder="First and last name" @bind-Text="@CreateSportModel.Name">
+                    <Feedback>
+                        <ValidationError />
+                    </Feedback>
+                </TextEdit>
+            </FieldBody>
+        </Field>
+    </Validation>
+    <Button Class="btn btn-primary" Color="Color.Primary" Clicked="@HandleAddingSport">Add sport</Button>
+</Validations>
+
+<Validations @ref="validations" Mode="ValidationMode.Auto" Model="@CreatePlayerModel">
+    <Validation>
+        <Field Horizontal>
+
+            <FieldBody ColumnSize="ColumnSize.Is10">
+                <TextEdit Placeholder="First and last name" @bind-Text="@CreatePlayerModel.Name">
+                    <Feedback>
+                        <ValidationError />
+                    </Feedback>
+                </TextEdit>
+            </FieldBody>
+        </Field>
+    </Validation>
+    <Button Class="btn btn-primary " Color="Color.Primary" Clicked="@HandleAddingPlayer">Add player</Button>
+</Validations>*@

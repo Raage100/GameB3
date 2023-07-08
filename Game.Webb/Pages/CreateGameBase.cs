@@ -56,6 +56,7 @@ namespace Game.Webb.Pages
                 var response = await _gameService.CreateGame(new CreateGameRequest(createGameModel.Name));
                
                 _stateContainerService.SetGameId(response.Id);
+               _stateContainerService.setGameName(createGameModel?.Name);
 
 
                 if (response.Id != 0)

@@ -20,7 +20,13 @@ namespace Game.Webb.Services
         }
         public async Task<CreateSportResponse> CreateSport(CreateSportRequest createSportRequest)
         {
-            var response = await _httpClient.PostAsJsonAsync("api/sports/CreateSport", createSportRequest);
+
+
+            if (createSportRequest == null)
+            {
+                throw new Exception("Sport could not be created");
+            }
+            var response = await _httpClient.PostAsJsonAsync("api/Sports/CreateSport", createSportRequest);
 
             if (response.IsSuccessStatusCode)
             {
@@ -31,6 +37,23 @@ namespace Game.Webb.Services
             else
             {
                 throw new Exception("Game could not be created");
+            }
+        }
+
+        public async Task<DeleteSportResponse> DeleteSport(int sportId)
+        {
+            var response = await _httpClient.PutAsJsonAsync("api/Sports/DeleteSport", sportId);
+
+            if (response.IsSuccessStatusCode)
+            {
+
+                var result = await response.Content.ReadFromJsonAsync<DeleteSportResponse>();
+
+                return result;
+            }
+            else
+            {
+                throw new Exception("Sport could not be deleted");
             }
         }
 

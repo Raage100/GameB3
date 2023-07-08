@@ -9,5 +9,7 @@ namespace Game.Webb.Services
 
 
         Task<List<GetSportsReponse>> GetSportsInGame(int gameId);
+
+        Task<DeleteSportResponse> DeleteSport(int sportId);
     }
 }

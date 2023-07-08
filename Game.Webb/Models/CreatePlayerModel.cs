@@ -2,11 +2,10 @@
 
 namespace Game.Webb.Models
 {
-    public class CreateGameModel
+    public class CreatePlayerModel
     {
         [Required]
         [StringLength(20, ErrorMessage = "Name must be longer than two letters.", MinimumLength = 2)]
         public string Name { get; set; }
-
     }
 }

@@ -1,0 +1,32 @@
+﻿@inherits SportBase
+
+
+
+
+
+@if (_stateContainerService.Sports.Any())
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var sport in _stateContainerService.Sports)
+            {
+                <tr>
+                    <td>@sport.Name</td>
+                    <td>
+                        <button class="btn btn-danger" @onclick="(() => HandleRemoveSport(sport.SportId))">Delete</button>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+else
+{
+    <p>No Sports</p>
+}

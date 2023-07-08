@@ -1,4 +1,5 @@
 ﻿using Game.Application.Sports.Commands.CreateSport;
+using Game.Application.Sports.Commands.DeleteSport;
 using Game.Application.Sports.Queries.GetSportsInGame;
 using Game.Contracts.Sports.Request;
 using Game.Contracts.Sports.Response;
@@ -14,6 +15,7 @@ namespace Game.Api.Mapping
 
             config.NewConfig<CreateSportRequest, CreateSportCommand>();
             config.NewConfig<CreateSportResult, CreateSportResponse>();
+            config.NewConfig<DeleteSportResult, DeleteSportResponse>();
         }
     }
 }

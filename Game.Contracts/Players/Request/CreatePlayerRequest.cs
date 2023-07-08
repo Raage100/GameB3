@@ -10,5 +10,12 @@ namespace Game.Contracts.Players.Request
     {
         public string Name { get; set; }
         public int GameId { get; set; }
+
+        public CreatePlayerRequest(string name, int gameId)
+        {
+            Name = name;
+            GameId = gameId;
+            
+        }
     }
 }

@@ -15,8 +15,8 @@ namespace Game.Webb.State
         int GetGameId();
         void setGameName(string name);
 
-        List<CreateSportResponse> Sports { get; set; }
-        List<CreatePlayerResponse> Players { get; set; }
+        List<GetSportsReponse> Sports { get; set; }
+        List<GetPlayersInGameResponse> Players { get; set; }
 
         List<CreateScoreRequest> ScoresEntires { get; set; }
 
@@ -24,7 +24,7 @@ namespace Game.Webb.State
 
 
         void SportAdded(List<GetSportsReponse> sports);
-        void PlayerAdded(List<CreatePlayerResponse> players);
+        void PlayerAdded(List<GetPlayersInGameResponse> players);
 
        
 

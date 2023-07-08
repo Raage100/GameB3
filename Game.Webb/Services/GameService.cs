@@ -19,7 +19,7 @@ namespace Game.Webb.Services
         public async Task<CreateGameResponse> CreateGame(CreateGameRequest createGameRequest)
         {
             var response = await _httpClient.PostAsJsonAsync("api/game/CreateGame", createGameRequest);
-            
+
             if (response.IsSuccessStatusCode)
             {
                 var result = await response.Content.ReadFromJsonAsync<CreateGameResponse>();
@@ -29,7 +29,7 @@ namespace Game.Webb.Services
             else
             {
                 throw new Exception("Game could not be created");
-            }   
+            }
         }
     }
 }
