@@ -4,12 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Game.Contracts.Sports
+namespace Game.Contracts.Players.Request
 {
-    public class GetSportsReponse
+    public class CreatePlayerRequest
     {
-        public int SportId { get; set; }
-
         public string Name { get; set; }
+        public int GameId { get; set; }
     }
 }

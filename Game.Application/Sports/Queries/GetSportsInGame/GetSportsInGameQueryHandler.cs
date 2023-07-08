@@ -9,7 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Game.Application.Sports.Queries
+namespace Game.Application.Sports.Queries.GetSportsInGame
 {
     public class GetSportsInGameQueryHandler : IRequestHandler<GetSportsInGameQuery, ErrorOr<GetSportsInGameResult>>
     {

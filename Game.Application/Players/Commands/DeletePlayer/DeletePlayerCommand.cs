@@ -6,15 +6,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Game.Application.Sports.Queries
+namespace Game.Application.Players.Commands.DeletePlayer
 {
-    public class GetSportsInGameQuery : IRequest<ErrorOr<GetSportsInGameResult>>
+    public class DeletePlayerCommand : IRequest<ErrorOr<DeletePlayerResult>>
     {
         public int Id { get; set; }
 
-        public GetSportsInGameQuery(int id)
+        public DeletePlayerCommand(int id)
         {
-            id = Id;
+            Id = id;
         }
+
     }
 }
