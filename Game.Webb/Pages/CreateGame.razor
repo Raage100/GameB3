@@ -1,0 +1,34 @@
+﻿@page "/CreateGame"
+@using Blazorise
+@using Game.Webb.Models;
+@inherits CreateGameBase
+
+
+<PageTitle>Create Game</PageTitle>
+
+<div Class="container pt-5">
+
+  <div class="row justify-content-center">
+      
+        <div class="col-md-6">
+    <Validations @ref="validations" Mode="ValidationMode.Auto" Model="@createGameModel">
+        <Validation Validator="@ValidationRule.IsNotEmpty">
+            <FieldLabel >Game Name</FieldLabel>
+            <Field>
+                <TextEdit Placeholder="write game name here" @bind-Text="@createGameModel.Name" />
+            </Field>
+
+        </Validation>
+
+                <Button Class="btn btn-primary btn-block" Color="Color.Primary" Clicked="@Submit">Create Game</Button>
+    </Validations>
+       </div>     
+   </div>
+</div>
+
+
+
+
+
+
+

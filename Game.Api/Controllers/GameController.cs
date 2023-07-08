@@ -1,6 +1,7 @@
 ﻿using ErrorOr;
 using Game.Application.Games.Commands.CreateGame;
 using Game.Contracts.Games.Request;
+using Game.Contracts.Games.Response;
 using MapsterMapper;
 using MediatR;
 using Microsoft.AspNetCore.Http;
@@ -30,7 +31,7 @@ namespace Game.Api.Controllers
 
             ErrorOr<CreateGameResult> Result = await _mediator.Send(command);
 
-            return Result.Match(Result => Ok(Result), Error => Problem(Error));
+            return Result.Match(result => Ok(_mapper.Map<CreateGameResponse>(result)), Error => Problem(Error));
 
 
         }

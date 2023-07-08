@@ -1,6 +1,7 @@
 using Game.Api;
 using Game.Application;
 using Game.Infrastructure;
+using Microsoft.Net.Http.Headers;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -26,9 +27,16 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
+app.UseCors(policy =>
+    policy.WithOrigins("https://localhost:7211", "http://localhost:5222")
+    .AllowAnyMethod()
+    .WithHeaders(HeaderNames.ContentType)
+);
 app.UseExceptionHandler("/error");
 app.UseAuthorization();
 
 app.MapControllers();
 
 app.Run();
+
+

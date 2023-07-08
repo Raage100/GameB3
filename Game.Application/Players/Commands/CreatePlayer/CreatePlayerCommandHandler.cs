@@ -55,7 +55,7 @@ namespace Game.Application.Players.Commands.CreatePlayer
 
             if (result > 0)
             {
-                return new CreatePlayerResult(newPlayer.PlayerId, newPlayer.Name);
+                return new CreatePlayerResult(newPlayer.PlayerId, newPlayer.Name, newPlayer.GameeId);
             }
             else
             {

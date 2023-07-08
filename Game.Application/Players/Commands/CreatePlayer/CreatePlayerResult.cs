@@ -8,13 +8,15 @@ namespace Game.Application.Players.Commands.CreatePlayer
 {
     public class CreatePlayerResult
     {
-        public int Id { get; set; }
+        public int PlayerId { get; set; }
         public string Name { get; set; }
+        public int GameId { get; set; }
 
-        public CreatePlayerResult(int id, string name)
+        public CreatePlayerResult(int id, string name, int gameId)
         {
-            Id = id;
+            PlayerId = id;
             Name = name;
+            GameId = gameId;
 
         }
     }

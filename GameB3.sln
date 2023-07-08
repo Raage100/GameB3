@@ -3,15 +3,17 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.6.33815.320
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Game.Api", "Game.Api\Game.Api.csproj", "{B9E9D0BF-1B4D-4F97-A1CE-51664D4146A9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Game.Api", "Game.Api\Game.Api.csproj", "{B9E9D0BF-1B4D-4F97-A1CE-51664D4146A9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Game.Application", "Game.Application\Game.Application.csproj", "{A15C9861-8641-485D-B18C-A8C8E883D698}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Game.Application", "Game.Application\Game.Application.csproj", "{A15C9861-8641-485D-B18C-A8C8E883D698}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Game.Infrastructure", "Game.Infrastructure\Game.Infrastructure.csproj", "{3CCEC83B-26C0-4964-B6F3-F83D1377786C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Game.Infrastructure", "Game.Infrastructure\Game.Infrastructure.csproj", "{3CCEC83B-26C0-4964-B6F3-F83D1377786C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Game.Domain", "Game.Domain\Game.Domain.csproj", "{344E3204-B685-4FEE-993B-869459A375EF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Game.Domain", "Game.Domain\Game.Domain.csproj", "{344E3204-B685-4FEE-993B-869459A375EF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Game.Contracts", "Game.Contracts\Game.Contracts.csproj", "{376638DE-BC67-43B6-BA02-19D35A09B465}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Game.Contracts", "Game.Contracts\Game.Contracts.csproj", "{376638DE-BC67-43B6-BA02-19D35A09B465}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Game.Webb", "Game.Webb\Game.Webb.csproj", "{C375CB7E-B8CE-4768-A278-786E9BB40CD9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +41,10 @@ Global
 		{376638DE-BC67-43B6-BA02-19D35A09B465}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{376638DE-BC67-43B6-BA02-19D35A09B465}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{376638DE-BC67-43B6-BA02-19D35A09B465}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C375CB7E-B8CE-4768-A278-786E9BB40CD9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C375CB7E-B8CE-4768-A278-786E9BB40CD9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C375CB7E-B8CE-4768-A278-786E9BB40CD9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C375CB7E-B8CE-4768-A278-786E9BB40CD9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

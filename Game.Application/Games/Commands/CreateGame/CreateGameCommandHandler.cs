@@ -34,7 +34,7 @@ namespace Game.Application.Games.Commands.CreateGame
 
             if (result > 0)
             {
-                return new CreateGameResult(game.GameeId);
+                return new CreateGameResult(game.GameeId, true);
             }
             else
             {

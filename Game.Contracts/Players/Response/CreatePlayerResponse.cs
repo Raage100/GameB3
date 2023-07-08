@@ -8,7 +8,8 @@ namespace Game.Contracts.Players.Response
 {
     public class CreatePlayerResponse
     {
-        public int Id { get; set; }
+        public int PlayerId { get; set; }
         public string Name { get; set; }
+        public int GameId { get; set; }
     }
 }
