@@ -9,7 +9,6 @@ namespace Game.Application.Sports.Commands.DeleteSport
 {
     public class DeleteSportCommandValidator : AbstractValidator<DeleteSportCommand>
     {
-
         public DeleteSportCommandValidator()
         {
             RuleFor(x => x.SportId).NotEmpty().WithMessage("Id is required");

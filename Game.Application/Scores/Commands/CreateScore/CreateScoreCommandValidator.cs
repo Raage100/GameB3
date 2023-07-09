@@ -14,10 +14,6 @@ namespace Game.Application.Scores.Commands.CreateScore
         {
             RuleFor(x => x.Scores).NotEmpty()
                 .ForEach(score => score.SetValidator(new ScoreValidator()));
-            
-
-          
-               
  
         }  
     }

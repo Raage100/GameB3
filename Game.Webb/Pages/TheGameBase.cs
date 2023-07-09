@@ -63,8 +63,12 @@ namespace Game.Webb.Pages
                 }
             }
 
-
-
+            if (CreateSportModel.Name == null)
+            {
+                ShowAlert = true;
+                Message = "You need to enter a sports name";
+                return;
+            }
 
 
             var id = await _sportService?.CreateSport(new CreateSportRequest(CreateSportModel.Name, GameId));
@@ -99,6 +103,7 @@ namespace Game.Webb.Pages
             int GameId = _stateContainerService.GetGameId();
 
          
+         
 
             foreach (var player in _stateContainerService.Players)
             {
@@ -108,6 +113,13 @@ namespace Game.Webb.Pages
                     Message = "The player already exists";
                     return;
                 }
+            }
+
+            if(CreatePlayerModel.Name == null)
+            {
+                ShowAlert = true;
+                Message = "You need to enter a player name";
+                return;
             }
 
             var id = await _playerService.CreatePlayer(new CreatePlayerRequest(CreatePlayerModel.Name, GameId));
@@ -127,6 +139,7 @@ namespace Game.Webb.Pages
 
         public void HandleStartGame()
         {
+            
 
             if (_stateContainerService.Players.Count < 2)
             {
@@ -146,12 +159,6 @@ namespace Game.Webb.Pages
 
             _navigationManager?.NavigateTo("/StartGame");
         }
-
-
-
-
-
-
 
     }
 }

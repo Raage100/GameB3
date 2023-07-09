@@ -21,10 +21,6 @@ namespace Game.Infrastructure
 
             services.AddScoped<IGameDbContext>(provider => provider.GetService<GameDbContext>());
 
-
-
-
-
             return services;
         }
     }

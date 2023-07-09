@@ -28,7 +28,7 @@ namespace Game.Application.Players.Queries
             {
                 return Errors.Gamee.GameDoesNotExist();
             }
-           // var players = await _dbContext.Players.Where(x => x.GameeId == request.Id).ToListAsync();
+          
             var Players = await _dbContext.Players
                .Where(s => s.GameeId == request.Id).ToListAsync(cancellationToken);
 

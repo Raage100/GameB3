@@ -8,11 +8,8 @@ namespace Game.Webb.Services
 {
     public class SportService : ISportService
     {
-
         private readonly HttpClient _httpClient;
         private readonly IStateContainerService _stateContainerService;
-
-
         public SportService(HttpClient httpClient, IStateContainerService stateContainerService)
         {
             _httpClient = httpClient;

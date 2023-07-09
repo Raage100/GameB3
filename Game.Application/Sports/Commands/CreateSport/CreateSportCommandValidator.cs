@@ -14,7 +14,6 @@ namespace Game.Application.Sports.Commands.CreateSport
             RuleFor(x => x.Name).NotEmpty().WithMessage("Name is required");
             RuleFor(x => x.GameId).GreaterThan(0).NotEmpty().WithMessage("GameId is required");
 
-          
         }
     }
     

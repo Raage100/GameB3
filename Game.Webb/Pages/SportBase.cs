@@ -25,7 +25,6 @@ namespace Game.Webb.Pages
             _stateContainerService.OnChange += StateHasChanged;
         }
 
-
         public async Task HandleRemoveSport(int sportId)
         {
         

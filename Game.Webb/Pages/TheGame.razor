@@ -19,12 +19,11 @@
     
 
     <div class="d-flex flex-row justify-content-evenly pt-5 ">
-        <!-- Left Side: Inputs and Buttons -->
+       
         <div class="flex-column">
             <div class="flex-column">
                 <EditForm Model="@CreateSportModel" OnSubmit=@HandleAddingSport>
-                    <ValidationSummary />
-                    <DataAnnotationsValidator />
+                   
                     <InputText class="form-control mb-3" @bind-Value="CreateSportModel.Name" placeholder="Add Sport here!" />
 
 
@@ -36,8 +35,8 @@
             <hr />
             <div class="flex-column">
                 <EditForm Model="@CreatePlayerModel" OnSubmit="@HandleAddingPlayer">
-                    <ValidationSummary />
-                    <DataAnnotationsValidator />
+          
+                    
                     <InputText class="form-control mb-3" @bind-Value="CreatePlayerModel.Name" placeholder="Add player here!" />
 
 
@@ -46,7 +45,7 @@
 
             </div>
         </div>
-        <!-- Right Side: Lists -->
+      
         <div>
             <div class="d-flex flex-row">
                 <div class="px-4">

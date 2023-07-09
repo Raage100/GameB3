@@ -54,9 +54,6 @@ namespace Game.Application.Sports.Commands.CreateSport
             {
                 return Errors.Sport.SportCouldNotBeCreated();
             }
-          
-      
-
            
         }
     }

@@ -41,8 +41,6 @@ namespace Game.Webb.Services
         public async Task<DeletePlayerResponse> DeletePlayer(int playerId)
         {
          
-
-
             var deletePlayerRequest = new DeletePlayerRequest(playerId);
 
             var response = await _httpClient.PostAsJsonAsync("api/player/DeletePlayer", deletePlayerRequest);

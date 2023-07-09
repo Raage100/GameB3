@@ -76,7 +76,7 @@ namespace Game.Webb.Pages
             }
             else
             {
-               
+
                 scoreEntry = new CreateScoreRequest
                 {
                     SportId = SelectedSportId,
@@ -126,8 +126,7 @@ namespace Game.Webb.Pages
             }
             else
             {
-                // Invalid input value
-                // You can handle this error condition as needed (e.g., show an error message)
+
                 ShowAlert = true;
                 Message = "Invalid input value. Please enter a valid number.";
             }
@@ -171,7 +170,7 @@ namespace Game.Webb.Pages
 
                 if (result.ScoresSaved == true)
                 {
-                
+
                     var players = _stateContainerService.Players;
                     var scores = _stateContainerService.ScoresEntires;
                     var sports = _stateContainerService.Sports;
@@ -185,7 +184,7 @@ namespace Game.Webb.Pages
                     }
 
                     var sortedPlayers = playersWithScores.OrderByDescending(x => x.Score).Take(3).ToList();
-                
+
 
 
 
@@ -217,14 +216,7 @@ namespace Game.Webb.Pages
                 return;
             }
 
-
-
-
         }
-
-
-
-
 
 
     }

@@ -6,8 +6,6 @@ namespace Game.Webb.Services
 {
     public class ScoreService : IScoreService
     {
-
-
         private readonly HttpClient _httpClient;
 
         public ScoreService(HttpClient httpClient)
