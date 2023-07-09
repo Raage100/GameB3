@@ -1,0 +1,70 @@
+﻿@page "/StartGame"
+
+@inherits StartGameBase
+
+
+
+
+<div class="container">
+    @if (ShowAlert)
+    {
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+            <strong>!</strong> @Message
+            <button type="button" class="btn-close" @onclick="(() => CloseAlert())"></button>
+        </div>
+    }
+
+
+    <div class="dropdown">
+        <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            @SelectedSport
+        </button>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            @if (Sports.Any())
+            {
+                @foreach (var sport in Sports)
+                {
+                    <a class="dropdown-item"  @onclick="(() => SelectedSportChanged(sport.Name, sport.SportId))">@sport.Name</a>
+                    <div class="dropdown-divider"></div>
+                }
+            }
+            else
+            {
+                <a class="dropdown-item disabled" href="#">No Sports</a>
+            }
+        </div>
+    </div>
+
+    @if (SelectedSportId != 0)
+    {
+        <h4>Selected Sport: @SelectedSport</h4>
+
+        @if (Players.Any())
+        {
+            foreach (var player in Players)
+            {
+                if (SelectedSportId != 0)
+                {
+                    <div>
+                        <p>@player.Name</p>
+                        <input type="number" value="@GetPlayerScore(player.PlayerId)" @oninput="@(e => UpdatePlayerScore(player.PlayerId, e.Value.ToString()))" />
+                    </div>
+                }
+            }
+
+            <button class="btn btn-danger" @onclick="@SaveScores">Save Scores And End Game</button>
+        }
+        else
+        {
+            <p>No Players</p>
+        }
+    }
+    else
+    {
+        <p>No Sport Selected</p>
+    }
+
+</div>
+
+
+

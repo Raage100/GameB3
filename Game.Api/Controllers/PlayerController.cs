@@ -3,6 +3,7 @@ using Game.Application.Players.Commands.CreatePlayer;
 using Game.Application.Players.Commands.DeletePlayer;
 using Game.Application.Players.Queries;
 using Game.Application.Sports.Commands.CreateSport;
+using Game.Application.Sports.Commands.DeleteSport;
 using Game.Contracts.Players.Request;
 using Game.Contracts.Players.Response;
 using Game.Contracts.Sports.Request;
@@ -42,9 +43,9 @@ namespace Game.Api.Controllers
 
         [HttpPost]
         [Route(nameof(DeletePlayer))]
-        public async Task<IActionResult> DeletePlayer(int PlayerId)
+        public async Task<IActionResult> DeletePlayer(DeletePlayerRequest deletePlayer)
         {
-            var command = new DeletePlayerCommand(PlayerId);
+            var command = new DeletePlayerCommand(deletePlayer.Id);
             ErrorOr<DeletePlayerResult> Result = await _mediator.Send(command);
 
             return Result.Match(result => Ok(result), error => Problem(error));
@@ -58,6 +59,10 @@ namespace Game.Api.Controllers
             ErrorOr<GetPlayersInGameResult> Result = await _mediator.Send(query);
 
             return (ActionResult)Result.Match(Result => Ok(_mapper.Map<List<GetPlayersInGameResponse>>(Result.PLayers)), Error => Problem(Error));
-        }   
+        }
+
+
+   
+
     }
 }

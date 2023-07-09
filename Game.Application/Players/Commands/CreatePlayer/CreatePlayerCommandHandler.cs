@@ -23,12 +23,7 @@ namespace Game.Application.Players.Commands.CreatePlayer
         public async Task<ErrorOr<CreatePlayerResult>> Handle(CreatePlayerCommand request, CancellationToken cancellationToken)
         {
 
-            //get the game and and by id and include the players 
-
             var game = await _gameDbContext.Gamees.Include(g => g.Players).FirstOrDefaultAsync(g => g.GameeId == request.GameId);
-
-
-
 
             if (game == null)
             {
@@ -36,8 +31,6 @@ namespace Game.Application.Players.Commands.CreatePlayer
 
             }
 
-
-            // check if the player already exists in the game
             var player = game.Players.FirstOrDefault(p => p.Name == request.Name);
             if (player != null)
             {

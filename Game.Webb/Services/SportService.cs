@@ -42,7 +42,10 @@ namespace Game.Webb.Services
 
         public async Task<DeleteSportResponse> DeleteSport(int sportId)
         {
-            var response = await _httpClient.PutAsJsonAsync("api/Sports/DeleteSport", sportId);
+       
+
+            var deleteSportRequest = new DeleteSportRequest(sportId);
+            var response = await _httpClient.PostAsJsonAsync("api/Sports/DeleteSport", deleteSportRequest);
 
             if (response.IsSuccessStatusCode)
             {

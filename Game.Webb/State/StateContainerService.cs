@@ -1,6 +1,7 @@
 ﻿using Game.Contracts.Players.Response;
 using Game.Contracts.Scores.Request;
 using Game.Contracts.Sports.Response;
+using Game.Webb.Models;
 
 namespace Game.Webb.State
 {
@@ -12,6 +13,8 @@ namespace Game.Webb.State
         public List<CreateScoreRequest> ScoresEntires { get; set; } = new();
         public List<GetSportsReponse> Sports { get; set; } = new();
         public List<GetPlayersInGameResponse> Players { get ; set ; } = new();
+        public  List<PlayerWithScore> playersScores { get; set; } = new();
+
 
         public event Action OnChange;
 
@@ -31,7 +34,17 @@ namespace Game.Webb.State
             NotifyStateChanged();
         }
 
-     
+        public void RemovePlayer(int playerId)
+        {
+            Players.RemoveAll(s => s.PlayerId == playerId);
+            NotifyStateChanged();
+        }
+
+        public void RemoveSport(int sportId)
+        {
+            Sports.RemoveAll(s => s.SportId == sportId);
+            NotifyStateChanged();
+        }
 
         public void SetGameId(int id)
         {

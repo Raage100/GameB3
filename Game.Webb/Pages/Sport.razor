@@ -6,11 +6,13 @@
 
 @if (_stateContainerService.Sports.Any())
 {
+
+    <h4 class="text-center">Sports added</h4>
     <table class="table">
         <thead>
             <tr>
                 <th>Name</th>
-                <th>Action</th>
+                <th>Delete</th>
             </tr>
         </thead>
         <tbody>
@@ -28,5 +30,5 @@
 }
 else
 {
-    <p>No Sports</p>
+    <h4 class="text-center  px-4">No sports added</h4>
 }

@@ -55,9 +55,9 @@ namespace Game.Api.Controllers
 
         [HttpPost]
         [Route(nameof(DeleteSport))]
-        public async Task<IActionResult> DeleteSport (int SportId)
+        public async Task<IActionResult> DeleteSport (DeleteSportRequest deleteSportRequest)
         {
-            var command = new DeleteSportCommand(SportId);
+            var command = new DeleteSportCommand(deleteSportRequest.SportId);
             ErrorOr<DeleteSportResult> Result = await _mediator.Send(command);
 
             return Result.Match(result => Ok(result), error => Problem(error));

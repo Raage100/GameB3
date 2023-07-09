@@ -28,10 +28,21 @@ namespace Game.Webb.Pages
 
         public async Task HandleRemoveSport(int sportId)
         {
-            int GameId = _stateContainerService.GetGameId();
-            await _sportService.DeleteSport(sportId);
-            var sports = await _sportService.GetSportsInGame(GameId);
-            _stateContainerService.SportAdded(sports);
+        
+
+
+           var response = await _sportService.DeleteSport(sportId);
+            
+            if(response.Deleted == true)
+            {
+                _stateContainerService.RemoveSport(sportId);
+            }
+            else
+            {
+               return;
+            }
+           
+            
         }
     }
 }

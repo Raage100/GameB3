@@ -8,11 +8,12 @@
 
 @if (_stateContainerService.Players.Any())
 {
+    <h4 class="text-center">Players added</h4>
     <table class="table">
         <thead>
             <tr>
                 <th>Name</th>
-                <th>Action</th>
+                <th>Delete</th>
             </tr>
         </thead>
         <tbody>
@@ -21,7 +22,7 @@
                 <tr>
                     <td>@player.Name</td>
                     <td>
-                        <button class="btn btn-danger" onclick="deleteSport('@player.PlayerId')">Delete</button>
+                        <button class="btn btn-danger" @onclick="(() => HandleRemovePlayer(player.PlayerId))">Delete</button>
                     </td>
                 </tr>
             }
@@ -30,5 +31,5 @@
 }
 else
 {
-    <p>No Sports</p>
+    <h4 class="text-center px-4">No players added</h4>
 }

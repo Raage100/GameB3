@@ -23,14 +23,14 @@ namespace Game.Application.Sports.Commands.CreateSport
         }
         public async Task<ErrorOr<CreateSportResult>> Handle(CreateSportCommand request, CancellationToken cancellationToken)
         {
-            //check if Game exists in the database
+           
             var game = await _gameDbContext.Gamees.FirstOrDefaultAsync(g => g.GameeId == request.GameId);
             if(game == null)
             {
                return Errors.Gamee.GameDoesNotExist();
             }
 
-            //check if Sport already exists in the database in the same Game
+          
             var sport = await _gameDbContext.Sports.FirstOrDefaultAsync(s => s.Name == request.Name && s.GameeId == request.GameId);
             if(sport != null)
             {
@@ -45,7 +45,7 @@ namespace Game.Application.Sports.Commands.CreateSport
 
            await _gameDbContext.Sports.AddAsync(sport);
            var result = await _gameDbContext.SaveChangesAsync(cancellationToken);
-            //check if Sport was successfully added to the database
+        
             if(result > 0)
             {
                 return new CreateSportResult(sport);

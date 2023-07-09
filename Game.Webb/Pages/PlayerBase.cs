@@ -1,4 +1,5 @@
-﻿using Game.Webb.State;
+﻿using Game.Webb.Services;
+using Game.Webb.State;
 using Microsoft.AspNetCore.Components;
 
 namespace Game.Webb.Pages
@@ -9,13 +10,12 @@ namespace Game.Webb.Pages
         [Inject]
         public IStateContainerService _stateContainerService { get; set; }
 
+        [Inject]
+        public IPlayerService _playerService { get; set; }
 
 
-        public void HandleRemoveSport(int playerId)
-        {
-            //sportService.RemoveSport(sportId);
-            //StateContainerService.StateHasChanged();
-        }
+
+        
 
         public void Dispose()
         {
@@ -25,6 +25,27 @@ namespace Game.Webb.Pages
         protected override void OnInitialized()
         {
             _stateContainerService.OnChange += StateHasChanged;
+        }
+
+
+
+        public async Task HandleRemovePlayer(int playerId)
+        {
+
+
+            var response = await _playerService.DeletePlayer(playerId);
+            
+
+            if (response.Deleted == true)
+            {
+                _stateContainerService.RemovePlayer(playerId);
+            }
+            else
+            {
+                return;
+            }
+
+
         }
 
     }
